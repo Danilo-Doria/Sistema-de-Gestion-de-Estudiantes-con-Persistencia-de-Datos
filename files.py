@@ -73,7 +73,7 @@ def load_csv(students, path="data/students_list.csv"):
                         print(f"\nInvalid row, negative values in the row: {row}")
                         error += 1
                         continue
-                    if state != "active" or state != "inactive":
+                    if state != "active" and state != "inactive":
                         print(f"\nInvalid row, the state must be 'active' or 'inactive': {row}")
                         error += 1
                         continue
@@ -97,7 +97,7 @@ def load_csv(students, path="data/students_list.csv"):
                         if new_student['id'] == student_list_memory['id']:
                             students.remove(student_list_memory)
                         
-                students.extend(new_list_students)
+            students.extend(new_list_students)
             
             if students:
                 if error > 0:

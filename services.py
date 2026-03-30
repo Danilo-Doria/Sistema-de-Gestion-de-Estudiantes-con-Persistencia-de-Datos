@@ -184,7 +184,15 @@ def update_student_data(students):
 
             course = input("\nEnter the student's course name: ").strip().lower()
 
-            state = input("\nEnter the student's current state (active or inactive): ").strip().lower()
+            # Variable to verify the conditions and exit or retry the cycle
+            valid = False
+
+            while not valid:
+                state = input("\nEnter the student's current state (active or inactive): ").strip().lower()
+                if state == "active" or state == "inactive":
+                    valid = True
+                else:
+                    print("\nPlease enter (active or inactive)")
 
             student['name'] = name
             student['age'] = age
